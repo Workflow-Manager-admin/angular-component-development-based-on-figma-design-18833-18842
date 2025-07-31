@@ -1,0 +1,26 @@
+<div class="login-container">
+  <form class="login-form" (ngSubmit)="onLogin()" autocomplete="off">
+    <h2>Login</h2>
+    <div class="input-group">
+      <label for="username">Username</label>
+      <input id="username" type="text" [(ngModel)]="username" name="username" required autocomplete="off" />
+    </div>
+    <div class="input-group">
+      <label for="password">Password</label>
+      <div class="password-row">
+        <input 
+          id="password" 
+          [type]="hidePassword ? 'password' : 'text'"
+          [(ngModel)]="password" 
+          name="password" 
+          required
+          autocomplete="off"
+        />
+        <button type="button" class="toggle-btn" (click)="togglePasswordVisibility()" aria-label="Show/hide password">
+          {{ hidePassword ? 'Show' : 'Hide' }}
+        </button>
+      </div>
+    </div>
+    <button class="submit-btn" type="submit">Log in</button>
+  </form>
+</div>
